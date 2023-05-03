@@ -15,19 +15,30 @@ const client = new ApolloClient({
 });
 
 //crear query para consultar los usuarios del backend
-const GET_ALL_USERS = gql`
-	query getAllUsers {
-		getAllUsers {
+export const GET_ALL_JERSEYS = gql`
+	query getAllJerseys {
+		getAllJerseys {
+			season
+			title
+			type
+			url
 			id
-			firstName
-			lastName
-			email
-			gender
 		}
 	}
 `;
 
-//envolvuelvo la app con el ApolloProvider y le paso el cliente que defini anteriormente
-export const CustomApolloProvider = ({ children }) => {
-	<ApolloProvider client={client}>{children}</ApolloProvider>;
-};
+export const GET_ALL_NUMBERS_JERSEYS = gql`
+	query getAllNumbersJerseys {
+		getAllNumberJerseys {
+			id
+			number
+			season
+			team
+		}
+	}
+`;
+
+//envuelvo la app con el ApolloProvider y le paso el cliente que defini anteriormente
+export const CustomApolloProvider = ({ children }) => (
+	<ApolloProvider client={client}>{children}</ApolloProvider>
+);
