@@ -52,3 +52,28 @@ const typeDefs = gql`
 		getAllUsers: [User!]!
 	}
 `;
+
+// resolver es una función que se encarga de devolver los datos que se han solicitado en la consulta . Puede recuperar esos datos de cualquier funete de datos disponible
+
+const resolvers = {
+	Query: {
+		getAllUsers: () => UsersMock,
+	},
+};
+
+// crear una instancia de ApolloServer y pasarle el esquema y los resolvers . typeDefs es un objeto que define el esquema de GraphQL y resolvers es un objeto que define cómo se deben resolver las consultas y mutaciones en el esquema.
+const server = new ApolloServer({
+	typeDefs,
+	resolvers,
+});
+
+// iniciar el servidor
+const { url } = await startStandaloneServer(server, {
+	listen: {
+		port: 8000,
+	},
+});
+
+console.log(`Server ready at ${url}`);
+
+// este código configura y ejecuta un servidor GraphQL utilizando Apollo Server en Node.js, lo que permite interactuar con un esquema de GraphQL utilizando consultas y mutaciones
