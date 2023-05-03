@@ -1,3 +1,5 @@
 En este repositorio de Github se creó una aplicación cliente-servidor, donde en el servidor se creó un mock de datos y se definieron los tipos de datos que pueden ser consultados o mutados, específicamente los tipos Jersey y Number Jersey. También se definieron las querys y los resolvers que se encargan de devolver los datos solicitados. Finalmente, se inició el servidor.
 
 En el cliente se importó ApolloClient e inMemoryCache, para crear una nueva instancia de cliente que se conecta al puerto :8000 del servidor. Se crearon las queries para consultar al backend y se envolvió la aplicación con el proveedor de Apollo, haciendo visible el cliente a toda la app. Se utilizó el hook useQuery para hacer la consulta de las queries y se renderizaron los datos obtenidos en tarjetas creadas en CSS. Con todo esto, se logró una integración completa entre el cliente y el servidor, donde se pueden consultar y obtener datos del mock creado en el servidor.
+
+![alt text](https://i.ibb.co/bHw6N0T/image.png)
