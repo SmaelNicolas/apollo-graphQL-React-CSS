@@ -36,9 +36,8 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		getAllJerseys: (args) => {
-			console.log(args);
-			return jerseysMock;
+		getAllJerseys: ({ name }) => {
+			return filterTeam(name);
 		},
 		getAllNumberJerseys: () => numberJerseyMock,
 	},
