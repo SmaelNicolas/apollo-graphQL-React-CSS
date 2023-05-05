@@ -10,7 +10,11 @@ import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
 import { Loader } from "./components/Loader/Loader";
 
 function App() {
-	const { data, loading, error } = useQuery(GET_ALL_JERSEYS);
+	const { data, loading, error } = useQuery(GET_ALL_JERSEYS, {
+		variables: {
+			team: "Barcelona",
+		},
+	});
 
 	// const {
 	// 	data: dataNumber,

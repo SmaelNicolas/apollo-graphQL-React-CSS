@@ -7,6 +7,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { gql } from "graphql-tag";
 import { jerseysMock } from "./data/jerseys.js";
 import { numberJerseyMock } from "./data/numbers.js";
+import { filterTeam } from "./functions/filter.js";
 
 // forma de definir los tipos de datos que pueden ser consultados o mutados en un 'esquema' GraphQL. Las Type Definitions permiten a los desarrolladores describir de forma clara y precisa los tipos de datos disponibles en una API GraphQL, lo que facilita la comprensión y el uso de la misma
 const typeDefs = gql`
@@ -26,7 +27,7 @@ const typeDefs = gql`
 	}
 
 	type Query {
-		getAllJerseys: [Jersey!]!
+		getAllJerseys(team: String = undefined): [Jersey!]!
 		getAllNumberJerseys: [NumberJersey!]!
 	}
 `;
@@ -35,7 +36,10 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		getAllJerseys: () => jerseysMock,
+		getAllJerseys: (args) => {
+			console.log(args);
+			return jerseysMock;
+		},
 		getAllNumberJerseys: () => numberJerseyMock,
 	},
 };

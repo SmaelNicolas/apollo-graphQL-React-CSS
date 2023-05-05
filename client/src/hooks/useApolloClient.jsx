@@ -16,8 +16,8 @@ const client = new ApolloClient({
 
 //crear query para consultar los usuarios del backend
 export const GET_ALL_JERSEYS = gql`
-	query getAllJerseys {
-		getAllJerseys {
+	query getAllJerseys($team: String) {
+		getAllJerseys(team: $team) {
 			season
 			title
 			type
