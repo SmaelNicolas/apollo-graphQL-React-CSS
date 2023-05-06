@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
+import Afa from "../../assets/afa.png";
+import Barca from "../../assets/bc.png";
 import Messi from "../../assets/messi.svg";
+import Psg from "../../assets/psg.svg";
 import styles from "./navbar.module.css";
 
 const teams = [
-	{ name: "Argentina", id: 1 },
-	{ name: "Barcelona", id: 2 },
-	{ name: "Paris Saint-Germain", id: 3 },
+	{ link: "Argentina", id: 1, img: Afa },
+	{ link: "Barcelona", id: 2, img: Barca },
+	{ link: "Paris Saint-Germain", id: 3, img: Psg },
 ];
 
 export const Navbar = () => {
@@ -22,12 +25,14 @@ export const Navbar = () => {
 					{teams.map((team) => (
 						<NavLink
 							onClick={handleClick}
-							className={`${styles.link}
-									 ${({ isActive }) => (isActive ? styles.active : "")}
-							`}
-							to={`/jerseys/${team.name}`}
+							className={styles.link}
+							to={`/jerseys/${team.link}`}
 							key={team.id}>
-							{team.name}
+							<img
+								className={styles.team}
+								src={team.img}
+								alt="messi"
+							/>
 						</NavLink>
 					))}
 				</ul>

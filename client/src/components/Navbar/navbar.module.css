@@ -17,25 +17,26 @@
 	margin: 0 auto;
 	padding: 10px 5px;
 }
-.image {
-	width: 50px;
-	height: 50px;
-	margin-left: 20px;
-}
 .ul {
 	width: 50%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
-
-.link {
-	text-decoration: none;
-	color: black;
-	font-size: 24px;
-	font-weight: 700;
+.image {
+	width: 100px;
+	height: 100px;
+	margin-left: 20px;
+}
+.team {
+	width: 90px;
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.active {
-	color: #5bd8c2 !important;
+.link {
+	width: 100px;
+	height: 100px;
 }
