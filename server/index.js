@@ -36,9 +36,11 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		getAllJerseys: ({ name }) => {
-			return filterTeam(name);
-		},
+		//👇 Esta es la que no me estaria funcionando
+		// getAllJerseys: ({ name }) => {
+		// 	return filterTeam(name);
+		// },
+		getAllJerseys: () => jerseysMock,
 		getAllNumberJerseys: () => numberJerseyMock,
 	},
 };
