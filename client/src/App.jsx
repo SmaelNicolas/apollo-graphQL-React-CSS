@@ -22,7 +22,7 @@ function App() {
 	// 	error: errorNumber,
 	// } = useQuery(GET_ALL_NUMBERS_JERSEYS);
 
-	if (error) <ErrorMessage msg={error.message} />;
+	if (error) return <ErrorMessage msg={error.message} />;
 	if (loading) return <Loader />;
 
 	return (
