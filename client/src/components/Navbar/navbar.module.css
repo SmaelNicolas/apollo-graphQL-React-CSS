@@ -1,0 +1,41 @@
+.header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	backdrop-filter: blur(10px);
+}
+.navigation {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 10px 5px;
+}
+.image {
+	width: 50px;
+	height: 50px;
+	margin-left: 20px;
+}
+.ul {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.link {
+	text-decoration: none;
+	color: black;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.active {
+	color: #5bd8c2 !important;
+}
