@@ -1,3 +1,6 @@
 export const filterTeam = (array, value) => {
-	return array.filter((item) => item.title.includes(value));
+	console.log(value);
+	return array.filter((item) =>
+		item.title.toLowerCase().includes(value.toLowerCase())
+	);
 };
